@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servlet Assignments - Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 42px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 18px;
+            margin-bottom: 50px;
+        }
+        
+        .assignments {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .card-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        
+        .card-title {
+            color: #333;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        
+        .card-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .features {
+            margin-bottom: 20px;
+        }
+        
+        .features h4 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .features ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .features li {
+            color: #555;
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #34a853;
+            font-weight: bold;
+        }
+        
+        .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .info-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .info-section h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .info-section p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .tech-badge {
+            background: #f0f0f0;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #555;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Servlet Assignments</h1>
+        <p class="subtitle">Choose an assignment to get started</p>
+        
+        <div class="assignments">
+            <!-- Assignment 1 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-number">1</div>
+                    <h3 class="card-title">Login Servlet</h3>
+                </div>
+                <p class="card-description">
+                    A secure login form that validates password strength and provides user feedback.
+                </p>
+                <div class="features">
+                    <h4>Features:</h4>
+                    <ul>
+                        <li>Username & Password input</li>
+                        <li>Password strength validation</li>
+                        <li>Dynamic response messages</li>
+                        <li>XSS protection</li>
+                    </ul>
+                </div>
+                <a href="login.html" class="btn">Try Login Servlet →</a>
+            </div>
+            
+            <!-- Assignment 2 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-number">2</div>
+                    <h3 class="card-title">Redirect Servlet</h3>
+                </div>
+                <p class="card-description">
+                    A smart search interface that redirects users to Google with their query.
+                </p>
+                <div class="features">
+                    <h4>Features:</h4>
+                    <ul>
+                        <li>Search input field</li>
+                        <li>HTTP redirect functionality</li>
+                        <li>URL encoding for safety</li>
+                        <li>Google search integration</li>
+                    </ul>
+                </div>
+                <a href="redirect.html" class="btn">Try Redirect Servlet →</a>
+            </div>
+        </div>
+        
+        <!-- Info Section -->
+        <div class="info-section">
+            <h2>📚 About This Project</h2>
+            <p>
+                This project demonstrates fundamental servlet concepts including form handling, 
+                HTTP methods (GET/POST), request parameters, and HTTP redirects. Both assignments 
+                showcase professional coding practices with modern UI design.
+            </p>
+            <p>
+                <strong>Learning Objectives:</strong> Understanding servlet lifecycle, handling user input, 
+                generating dynamic responses, and implementing HTTP redirects using sendRedirect().
+            </p>
+            
+            <div class="tech-stack">
+                <span class="tech-badge">Java Servlets</span>
+                <span class="tech-badge">HTML5</span>
+                <span class="tech-badge">CSS3</span>
+                <span class="tech-badge">Apache Tomcat</span>
+                <span class="tech-badge">HTTP Protocol</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
