@@ -21,7 +21,7 @@ public class ProductController {
 
     // Constructor - Initialize with 10 sample products
     public ProductController() {
-        products.add(new Product(1L, "iPhone 14", "Latest Apple smartphone", 999.99, "Electronics", 50, "Apple"));
+products.add(new Product(1L, "iPhone 14", "Latest Apple smartphone", 999.99, "Electronics", 50, "Apple"));
         products.add(new Product(2L, "Samsung Galaxy S23", "Android flagship phone", 899.99, "Electronics", 30, "Samsung"));
         products.add(new Product(3L, "MacBook Pro", "Professional laptop", 1999.99, "Electronics", 20, "Apple"));
         products.add(new Product(4L, "Dell XPS 15", "High-performance laptop", 1499.99, "Electronics", 15, "Dell"));

@@ -21,11 +21,11 @@ public class StudentController {
 
     // Constructor - Initialize with 5 sample students
     public StudentController() {
-        students.add(new Student(1L, "John", "Doe", "john.doe@email.com", "Computer Science", 3.8));
-        students.add(new Student(2L, "Jane", "Smith", "jane.smith@email.com", "Computer Science", 3.9));
-        students.add(new Student(3L, "Mike", "Johnson", "mike.j@email.com", "Electrical Engineering", 3.5));
-        students.add(new Student(4L, "Sarah", "Williams", "sarah.w@email.com", "Business Administration", 3.2));
-        students.add(new Student(5L, "David", "Brown", "david.b@email.com", "Computer Science", 3.6));
+        students.add(new Student(1L, "manzi", "delphin", "john.doe@email.com", "Computer Science", 3.8));
+        students.add(new Student(2L, "Ngabo", "justin", "jane.smith@email.com", "Computer Science", 3.9));
+        students.add(new Student(3L, "Mugisha", "ghslaine", "mike.j@email.com", "Electrical Engineering", 3.5));
+        students.add(new Student(4L, "Murerwa", "faith", "sarah.w@email.com", "Business Administration", 3.2));
+        students.add(new Student(5L, "Cyiza", "eric", "david.b@email.com", "Computer Science", 3.6));
     }
 
     /**
