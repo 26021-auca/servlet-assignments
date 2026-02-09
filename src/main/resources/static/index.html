@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Spring Boot REST API - Quick UI</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;margin:24px}
+    h1{margin-bottom:8px}
+    .endpoint{display:flex;align-items:center;gap:8px;margin:8px 0}
+    button{padding:6px 10px;border-radius:4px;border:1px solid #888;background:#f3f3f3;cursor:pointer}
+    pre{background:#111;color:#dff;font-size:13px;padding:12px;border-radius:6px;overflow:auto;max-height:360px}
+    .card{border:1px solid #eee;padding:12px;border-radius:8px;margin-bottom:12px}
+  </style>
+</head>
+<body>
+  <h1>API Quick UI</h1>
+  <p>Click <strong>Open</strong> to open the endpoint in a new tab, or <strong>Fetch</strong> to display the JSON result below.</p>
+
+  <div class="card">
+    <div class="endpoint"><strong>Books</strong><button onclick="openEndpoint('/api/books')">Open</button><button onclick="fetchEndpoint('/api/books')">Fetch</button></div>
+    <div class="endpoint"><strong>Students</strong><button onclick="openEndpoint('/api/students')">Open</button><button onclick="fetchEndpoint('/api/students')">Fetch</button></div>
+    <div class="endpoint"><strong>Products</strong><button onclick="openEndpoint('/api/products')">Open</button><button onclick="fetchEndpoint('/api/products')">Fetch</button></div>
+    <div class="endpoint"><strong>Menu</strong><button onclick="openEndpoint('/api/menu')">Open</button><button onclick="fetchEndpoint('/api/menu')">Fetch</button></div>
+    <div class="endpoint"><strong>Tasks</strong><button onclick="openEndpoint('/api/tasks')">Open</button><button onclick="fetchEndpoint('/api/tasks')">Fetch</button></div>
+    <div class="endpoint"><strong>Users</strong><button onclick="openEndpoint('/api/users')">Open</button><button onclick="fetchEndpoint('/api/users')">Fetch</button></div>
+  </div>
+
+  <div class="card">
+    <label for="custom">Custom endpoint:</label>
+    <input id="custom" type="text" placeholder="/api/books or http://localhost:8080/api/books" style="width:60%;padding:6px;margin-left:8px"/>
+    <button onclick="onCustom()">Open</button>
+    <button onclick="onCustomFetch()">Fetch</button>
+  </div>
+
+  <h2>Result</h2>
+  <pre id="result">No results yet.</pre>
+
+  <script>
+    function absolute(url){
+      if(url.startsWith('http')) return url;
+      return window.location.origin + url;
+    }
+
+    function openEndpoint(url){
+      window.open(absolute(url), '_blank');
+    }
+
+    async function fetchEndpoint(url){
+      const out = document.getElementById('result');
+      out.textContent = 'Loading ' + url + ' ...';
+      try{
+        const res = await fetch(absolute(url));
+        if(!res.ok) throw new Error(res.status + ' ' + res.statusText);
+        const data = await res.json();
+        out.textContent = JSON.stringify(data, null, 2);
+      }catch(e){
+        out.textContent = 'Fetch error: ' + e.message;
+      }
+    }
+
+    function onCustom(){
+      const url = document.getElementById('custom').value.trim();
+      if(!url) return alert('Enter endpoint');
+      openEndpoint(url.startsWith('/')? url : url);
+    }
+    function onCustomFetch(){
+      const url = document.getElementById('custom').value.trim();
+      if(!url) return alert('Enter endpoint');
+      fetchEndpoint(url.startsWith('/')? url : url);
+    }
+  </script>
+</body>
+</html>

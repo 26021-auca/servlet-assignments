@@ -8,10 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * REST Controller for E-Commerce Product Management
- * Handles all product-related API endpoints
- */
+
 @RestController
 @RequestMapping("/api/products")
 public class ProductController {
